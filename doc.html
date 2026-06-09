@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrilho — Documentação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+  <link rel="stylesheet" href="assets/css/doc.css">
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+</head>
+<body>
+
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-back">
+      <i class="ph ph-arrow-left"></i>
+      <span>Voltar</span>
+    </a>
+    <div class="nav-brand">
+      <div class="nav-logo">
+        <img src="/assets/img/logo.png" alt="">
+      </div>
+      <span>Nutrilho</span>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Alternar tema">
+      <i class="ph ph-sun-dim" id="themeIcon"></i>
+    </button>
+  </nav>
+
+  <div class="page">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-badge">
+        <i class="ph ph-code"></i>
+        Documentação Técnica
+      </div>
+      <h1>Rodando o <span class="gradient-text">Nutrilho</span><br>no seu iPhone</h1>
+      <p class="hero-sub">Guia completo para rodar o projeto React Native com Expo no iOS via VSCode. Siga os passos abaixo na ordem.</p>
+      <div class="hero-pills">
+        <span class="pill"><i class="ph ph-device-mobile"></i> iOS only</span>
+        <span class="pill"><i class="ph ph-atom"></i> React Native</span>
+        <span class="pill"><i class="ph ph-lightning"></i> Expo</span>
+        <span class="pill"><i class="ph ph-code-simple"></i> VSCode</span>
+      </div>
+    </header>
+
+    <main class="steps">
+
+      <section class="step" id="step-1">
+        <div class="step-marker">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-header">
+            <div class="step-icon"><i class="ph ph-check-square"></i></div>
+            <div>
+              <h2>Pré-requisitos</h2>
+              <p class="step-desc">Certifique-se de ter o ambiente instalado antes de continuar.</p>
+            </div>
+          </div>
+
+          <div class="req-grid">
+            <div class="req-card">
+              <i class="ph ph-arrow-square-out req-icon"></i>
+              <span class="req-name">Node.js</span>
+              <span class="req-version">v18 ou superior</span>
+              <a href="https://nodejs.org" target="_blank" rel="noopener" class="req-link">nodejs.org <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <div class="req-card">
+              <i class="ph ph-arrow-square-out req-icon"></i>
+              <span class="req-name">VSCode</span>
+              <span class="req-version">Qualquer versão</span>
+              <a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="req-link">code.visualstudio.com <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <div class="req-card">
+              <i class="ph ph-arrow-square-out req-icon"></i>
+              <span class="req-name">Expo Go</span>
+              <span class="req-version">App no iPhone</span>
+              <a href="https://apps.apple.com/app/expo-go/id982107779" target="_blank" rel="noopener" class="req-link">App Store <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <div class="req-card">
+              <i class="ph ph-arrow-square-out req-icon"></i>
+              <span class="req-name">Git</span>
+              <span class="req-version">Para clonar o projeto</span>
+              <a href="https://git-scm.com" target="_blank" rel="noopener" class="req-link">git-scm.com <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <i class="ph ph-info"></i>
+            <p>O iPhone e o computador precisam estar na <strong>mesma rede Wi-Fi</strong> para o Expo conseguir se conectar.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="step" id="step-2">
+        <div class="step-marker">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-header">
+            <div class="step-icon"><i class="ph ph-download-simple"></i></div>
+            <div>
+              <h2>Baixar o Projeto</h2>
+              <p class="step-desc">Faça o download do arquivo ZIP ou clone via Git.</p>
+            </div>
+          </div>
+
+          <div class="download-options">
+            <div class="download-card primary-card">
+              <div class="download-card-header">
+                <div class="dl-icon"><i class="ph ph-file-zip"></i></div>
+                <div>
+                  <span class="dl-label">Download direto</span>
+                  <span class="dl-sub">Recomendado para iniciantes</span>
+                </div>
+                <span class="badge-rec">Recomendado</span>
+              </div>
+              <a href="#" download class="btn-download">
+                <i class="ph ph-download-simple"></i>
+                Baixar nutrilho.zip
+              </a>
+              <p class="dl-hint">Após baixar, extraia a pasta e abra-a no VSCode com <kbd>File → Open Folder</kbd></p>
+            </div>
+
+            <div class="download-card">
+              <div class="download-card-header">
+                <div class="dl-icon"><i class="ph ph-git-branch"></i></div>
+                <div>
+                  <span class="dl-label">Clonar com Git</span>
+                  <span class="dl-sub">Para quem usa terminal</span>
+                </div>
+              </div>
+              <div class="code-block">
+                <div class="code-topbar">
+                  <span class="code-lang">bash</span>
+                  <button class="copy-btn" data-code="git clone https://github.com/seu-usuario/nutrilho.git">
+                    <i class="ph ph-copy"></i><span>Copiar</span>
+                  </button>
+                </div>
+                <pre><code><span class="c-cmd">git clone</span> https://github.com/seu-usuario/nutrilho.git
+<span class="c-cmd">cd</span> nutrilho</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="step" id="step-3">
+        <div class="step-marker">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-header">
+            <div class="step-icon"><i class="ph ph-package"></i></div>
+            <div>
+              <h2>Instalar Dependências</h2>
+              <p class="step-desc">Abra o terminal integrado do VSCode com <kbd>Ctrl + `</kbd> e rode:</p>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-topbar">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="npm install">
+                <i class="ph ph-copy"></i><span>Copiar</span>
+              </button>
+            </div>
+            <pre><code><span class="c-cmd">npm install</span></code></pre>
+          </div>
+
+          <div class="info-box">
+            <i class="ph ph-clock"></i>
+            <p>Isso pode levar alguns minutos na primeira vez. Você verá uma pasta <code>node_modules</code> sendo criada — é normal.</p>
+          </div>
+
+          <p class="step-note">Se preferir usar <strong>Yarn</strong>:</p>
+          <div class="code-block mt-8">
+            <div class="code-topbar">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="yarn install">
+                <i class="ph ph-copy"></i><span>Copiar</span>
+              </button>
+            </div>
+            <pre><code><span class="c-cmd">yarn install</span></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="step" id="step-4">
+        <div class="step-marker">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-header">
+            <div class="step-icon featured-icon"><i class="ph ph-play-circle"></i></div>
+            <div>
+              <h2>Rodar o Projeto</h2>
+              <p class="step-desc">Inicie o servidor de desenvolvimento do Expo:</p>
+            </div>
+          </div>
+
+          <div class="code-block featured-code">
+            <div class="code-topbar">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="npx expo start">
+                <i class="ph ph-copy"></i><span>Copiar</span>
+              </button>
+            </div>
+            <pre><code><span class="c-cmd">npx expo start</span></code></pre>
+          </div>
+
+          <div class="qr-flow">
+            <div class="qr-step">
+              <div class="qr-num">a</div>
+              <p>O terminal exibirá um <strong>QR Code</strong> no terminal ou no browser</p>
+            </div>
+            <div class="qr-arrow"><i class="ph ph-arrow-right"></i></div>
+            <div class="qr-step">
+              <div class="qr-num">b</div>
+              <p>Abra o app <strong>Expo Go</strong> no iPhone</p>
+            </div>
+            <div class="qr-arrow"><i class="ph ph-arrow-right"></i></div>
+            <div class="qr-step">
+              <div class="qr-num">c</div>
+              <p>Escaneie o QR Code com a câmera do Expo Go</p>
+            </div>
+            <div class="qr-arrow"><i class="ph ph-arrow-right"></i></div>
+            <div class="qr-step">
+              <div class="qr-num">d</div>
+              <p>O app abrirá automaticamente no seu iPhone 🎉</p>
+            </div>
+          </div>
+
+          <div class="info-box success-box">
+            <i class="ph ph-check-circle"></i>
+            <p>Pronto! Qualquer alteração no código será refletida em tempo real no iPhone via <strong>Fast Refresh</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="step" id="step-5">
+        <div class="step-marker">
+          <div class="step-num">5</div>
+        </div>
+        <div class="step-body">
+          <div class="step-header">
+            <div class="step-icon"><i class="ph ph-warning-circle"></i></div>
+            <div>
+              <h2>Problemas Comuns</h2>
+              <p class="step-desc">Soluções para os erros mais frequentes.</p>
+            </div>
+          </div>
+
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary>
+                <i class="ph ph-wifi-slash"></i>
+                <span>Expo Go não consegue se conectar</span>
+                <i class="ph ph-caret-down faq-arrow"></i>
+              </summary>
+              <div class="faq-body">
+                <p>Verifique que iPhone e computador estão na mesma rede Wi-Fi. Se não funcionar, tente o modo tunnel:</p>
+                <div class="code-block mt-8">
+                  <div class="code-topbar">
+                    <span class="code-lang">bash</span>
+                    <button class="copy-btn" data-code="npx expo start --tunnel">
+                      <i class="ph ph-copy"></i><span>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code><span class="c-cmd">npx expo start</span> --tunnel</code></pre>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <i class="ph ph-x-circle"></i>
+                <span>Erro ao rodar npm install</span>
+                <i class="ph ph-caret-down faq-arrow"></i>
+              </summary>
+              <div class="faq-body">
+                <p>Apague a pasta <code>node_modules</code> e o arquivo <code>package-lock.json</code>, depois reinstale:</p>
+                <div class="code-block mt-8">
+                  <div class="code-topbar">
+                    <span class="code-lang">bash</span>
+                    <button class="copy-btn" data-code="rm -rf node_modules package-lock.json && npm install">
+                      <i class="ph ph-copy"></i><span>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code><span class="c-cmd">rm -rf</span> node_modules package-lock.json
+<span class="c-cmd">npm install</span></code></pre>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <i class="ph ph-arrow-counter-clockwise"></i>
+                <span>App travou ou não atualiza</span>
+                <i class="ph ph-caret-down faq-arrow"></i>
+              </summary>
+              <div class="faq-body">
+                <p>Limpe o cache do Expo e reinicie:</p>
+                <div class="code-block mt-8">
+                  <div class="code-topbar">
+                    <span class="code-lang">bash</span>
+                    <button class="copy-btn" data-code="npx expo start --clear">
+                      <i class="ph ph-copy"></i><span>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code><span class="c-cmd">npx expo start</span> --clear</code></pre>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <i class="ph ph-device-mobile-slash"></i>
+                <span>iPhone não aparece no Expo Go</span>
+                <i class="ph ph-caret-down faq-arrow"></i>
+              </summary>
+              <div class="faq-body">
+                <p>Certifique-se de que o <strong>Expo Go</strong> está atualizado na App Store. Versões muito antigas podem não ser compatíveis com o SDK atual do projeto.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer-logo nav-logo"><img src="/assets/img/logo.png" alt=""></div>
+      <p>© 2026 Nutrilho</p>
+      <span>Feito para o seu bem-estar</span>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="assets/js/doc.js"></script>
+</body>
+</html>
